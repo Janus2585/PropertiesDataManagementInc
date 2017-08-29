@@ -1,0 +1,28 @@
+   <img src="" id="ispyfeed" style="width:320;height:240px" alt="ispy feed" title="ispy feed"/>
+            <a href="http://www.ispyconnect.com" target="_blank">ispy - free surveillance software</a>
+            <script type="text/javascript">
+                var oImage;
+                var _targetimage = "myimage.jpg";
+                function getcamerafeed() {
+                    oImage = new Image;
+                    camid = cameraid;
+                    oImage.onload = getnextframe;
+                    var _src = _targetimage + "&r=" + Math.random();
+                    oImage.src = _src;
+                }
+                function getnextframe() {
+                    document.getElementById("ispyfeed").src = oImage.src;
+                    oImage = new Image;
+                    oImage.onload = getnextframe;
+
+                    var delay = 2000;
+                    window.setTimeout("loadframe()", delay);
+
+                }
+                function loadframe() {
+                    var _src = _targetimage + "&r=" + Math.random();
+                    oImage.src = _src;
+                }
+                window.onload = getcamerafeed();
+            </script>
+        
